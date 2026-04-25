@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Categoria</title>
+    <link rel="stylesheet" th:href="@{/css/form-categoria.css}">
+</head>
+<body>
+<h1 th:text="${categoria.idCategoria == null ? 'Nova Categoria' : 'Editar Categoria'}"></h1>
+
+<form th:action="@{/categorias}" th:object="${categoria}" method="post">
+    <input type="hidden" th:field="*{idCategoria}" />
+
+    <div>
+        <label for="nome">Nome da Categoria</label>
+        <input type="text" th:field="*{nome}" id="nome" />
+        <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+    </div>
+
+    <div class="buttons">
+        <button type="submit">Salvar</button>
+        <a href="/categorias">Cancelar</a>
+    </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,83 @@
+body {
+    background-color: #000;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.box {
+    width: 350px;
+    margin: 80px auto;
+    padding: 40px;
+    background-color: #111;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #00ffff;
+}
+
+h2 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    text-shadow: 0 0 10px #ffffff,
+                 0 0 20px #ffffff,
+                 0 0 30px #00ffff;
+}
+
+/* Inputs e select */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: #000;
+    color: #fff;
+    outline: none;
+    box-shadow: 0 0 5px #00ffff inset;
+    transition: 0.3s;
+}
+
+/* Foco */
+input:focus, select:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff inset;
+}
+
+/* Botão */
+button {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #00ffff;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-shadow: 0 0 5px #ffffff;
+    box-shadow: 0 0 10px #00ffff;
+    transition: 0.3s;
+}
+
+button:hover {
+    color: #00ffff;
+    border-color: #fff;
+    text-shadow: 0 0 10px #ff0000;
+}
+
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 0 5px #ff4444;
+    border: 2px solid #00ffff;
+    padding: 8px 15px;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: #00ffff;
+    border-color: #fff;
+    text-shadow: 0 0 10px #ff0000;
+}

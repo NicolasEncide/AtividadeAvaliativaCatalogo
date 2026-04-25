@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" th:href="@{/css/editar-produto.css}">
+</head>
+<body>
+    <div class="container">
+      <div>
+        <h2>Editar Produto</h2>
+      </div>
+      <div>
+        <form th:action="@{/produtos/editar/{id}(id=${produto.idProduto})}" th:object="${produto}" method="post">
+          <div>
+            <label for="nome">Nome</label>
+            <input type="text" th:field="*{nome}" id="nome">
+            <span th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}"></span>
+          </div>
+
+          <div>
+            <label for="valor">Preço (R$)</label>
+            <input type="number" step="0.01" th:field="*{valor}" id="valor">
+            <span th:if="${#fields.hasErrors('valor')}" th:errors="*{valor}"></span>
+          </div>
+
+          <div>
+            <label for="categoria">Categoria</label>
+            <select th:field="*{categoria.idCategoria}" id="categoria">
+              <option value="" disabled>Selecione uma categoria</option>
+              <option th:each="cat : ${categorias}"
+                      th:value="${cat.idCategoria}"
+                      th:text="${cat.nome}"
+                      th:selected="${cat.idCategoria == produto.categoria.idCategoria}">
+              </option>
+            </select>
+            <span th:if="${#fields.hasErrors('categoria')}" th:errors="*{categoria}"></span>
+          </div>
+
+
+          <div class="buttons">
+            <button type="submit">Atualizar</button>
+            <a href="/produtos" class="cancel-link">Voltar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+</body>
+</html>
